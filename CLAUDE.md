@@ -26,9 +26,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 node scripts/integrate_preset.js              # 拼接预设 + 世界书 → 预设/<今天日期>/穗乃香.yml（日常命令）
 node scripts/integrate_preset.js 07.18        # 指定日期（如需要覆盖历史版本）
+node scripts/validate_preset.js               # 预设格式校验（改世界书后必须跑！不加参数=检查今天生成的）
+node scripts/validate_preset.js 07.27         # 校验指定日期的预设
 node scripts/audit_world_book.js              # 世界书体检：常驻大小/单字关键词/递归风险/连环触发
 node scripts/prune_world_book.js              # 世界书精简：高危关键词修复+城市摘要（重大重构时用，已执行）
 node scripts/convert_world_book.js --force    # 一次性：酒馆 JSON → Koishi 世界书 YAML（会覆盖手动修改，勿随意重跑）
+```
+
+**⚠️ 修改世界书源文件后的强制流程：**
+```bash
+node scripts/validate_preset.js   # 先校验源文件对应的已生成预设是否干净（如已有历史版本）
+# → 编辑 附属文件/世界书/光之美少女世界书Koishi版.yml
+node scripts/integrate_preset.js  # 重新集成
+node scripts/validate_preset.js   # 校验新生成的预设
+# → validate 通过（0 errors）后才能 git commit
 ```
 
 脚本内路径以脚本所在位置（`__dirname/..`）解析，任意工作目录下运行均可；若移动/重命名源文件，需同步更新脚本顶部的路径常量。
@@ -69,6 +80,55 @@ git diff HEAD~1                 # 查看上次提交的改动
    - 将整个 world_lores 块插入预设源文件中 `format_user_prompt:` 之前。
    - 写出前自动把旧的 `穗乃香.yml` 备份到 `backup/穗乃香.yml.bak`；写出后校验输出只含一个 `world_lores:` 段且穗乃香条目位于第一。
 
+## ⚠️ YAML 格式禁区（必须严格遵守）
+
+**以下规则绝对不可违反，违反会导致 ChatLuna 解析异常、上下文爆炸、模型不可用。**
+
+### 禁止在 YAML 块标量内使用无缩进注释
+
+```yaml
+# ❌ 错误 — # 在行首，YAML 解析为顶级注释，不属于 content 块
+  - keywords:
+      - 天空市
+    content: |-
+#天空市的光之美少女       ← 这会破坏 YAML 结构！
+      ```yaml
+      ...
+      ```
+
+# ✅ 正确 — 要么不放注释，要么确保注释有正确缩进
+  - keywords:
+      - 天空市
+    content: |-
+      ```yaml
+      ...
+      ```
+```
+
+**2026-07-27 事故**：新增 25 个城市摘要条目时，每个 `content: |-` 后跟了一行行首 `#注释`，导致 YAML 块标量被破坏，ChatLuna 解析异常 → 任何消息都触发全量世界书注入 → DeepSeek 模型不可用。**此后绝对禁止在世界书文件中添加任何行首注释。**
+
+### 禁止的操作
+
+- **禁止在 `content: |-` 块内使用行首 `#` 注释**（YAML 会将其视为顶级注释而非块内容）
+- **禁止在源 YAML 文件中使用任何行首注释**（`#` 在 column 0）
+- **禁止在 `content: |-` 后紧跟非缩进行**（包括空行后的无缩进内容）
+- **禁止手动编辑 `预设/<日期>/穗乃香.yml`**（它是生成物，改源文件后重跑集成即可）
+
+### 修改后必须校验
+
+```bash
+node scripts/validate_preset.js    # 0 errors 才算通过，有 warning 也要检查
+```
+
+校验脚本检查项：
+- 行首 `#` 注释（致命）
+- `content:|-` 后非缩进行（致命）
+- world_lores 默认配置完整性（致命）
+- 单字关键词（警告）
+- 空关键词/空 content（致命）
+- 重复 world_lores 段（致命）
+- 重复关键词（信息）
+
 ## 世界书条目编写守则（防止上下文成本失控）
 
 `world_lores` 的行为要点（依据 `附属文件/预设文档.md`）：`constant: true` 条目**每条消息必然全量注入**；`tokenLimit` 只约束关键词扫描；关键词按子串匹配。因此：
@@ -104,6 +164,7 @@ chat/
 ├── .gitignore                               ← 排除 预设/ 和 *.bak
 ├── scripts/
 │   ├── integrate_preset.js                  ← 拼接预设 + 世界书 → 最终输出（自动按日期归档）
+│   ├── validate_preset.js                   ← **预设格式校验（改世界书后必须跑！）**
 │   ├── audit_world_book.js                  ← 世界书体检：常驻大小/单字关键词/递归风险/连环触发
 │   ├── prune_world_book.js                  ← 世界书精简：高危关键词修复+城市摘要合并（重大重构用）
 │   ├── convert_world_book.js                ← 一次性提取工具（重跑会覆盖 Koishi 版手动修改，需 --force）
