@@ -8,10 +8,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 预设文件大小说明（重要：防止 AI 误判）
 
-最终生成的 `穗乃香.yml` 约 **400-430 KB**，这是因为拼接了完整的世界书（`光之美少女世界书Koishi版.yml`，约 420 KB）。**这不是泄漏、不是 bug。**
+最终生成的 `穗乃香.yml` 约 **800-830 KB**，这是因为拼接了完整的世界书（`光之美少女世界书Koishi版.yml`，约 790 KB）。**这不是泄漏、不是 bug。**
 
-- **`prompts` 段**（角色性格、对话规则等）：约 6 KB，每条消息必定注入
-- **`world_lores` 段**（角色背景知识库）：约 420 KB，**按关键词触发、按需加载**
+> **注意**：`integrate_preset.js` 脚本旧版用 `.length` 统计字符数（中文 1 字符 ≠ 1 字节），会报 ~420 "KB"。2026-07-27 已修复为 `Buffer.byteLength`，现在报告的是真实磁盘大小。
+
+- **`prompts` 段**（角色性格、对话规则等）：约 12 KB，每条消息必定注入
+- **`world_lores` 段**（角色背景知识库）：约 790 KB，**按关键词触发、按需加载**
   - `constant: true` 条目 = 每条消息注入（当前为 **0 个**）
   - 关键词条目 = 仅当聊天内容命中关键词时才加载对应条目
   - `tokenLimit: 2000` = 单次关键词匹配注入上限（约 2000 tokens）

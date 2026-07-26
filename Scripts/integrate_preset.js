@@ -85,10 +85,11 @@ const newPreset = presetBefore + '\n' + worldLores + '\n' + presetAfter;
 // Write output
 fs.writeFileSync(outPath, newPreset, 'utf8');
 
-console.log('Source preset: ' + basePresetPath + ' (' + (basePreset.length / 1024).toFixed(1) + ' KB)');
-console.log('Honoka entry: ' + honokaEntryPath + ' (' + (honokaEntry.length / 1024).toFixed(1) + ' KB)');
-console.log('World lores: ' + worldLoresPath + ' (' + (worldLores.length / 1024).toFixed(1) + ' KB -> ' + ((before.length + honokaEntry.length + after.length) / 1024).toFixed(1) + ' KB combined)');
-console.log('Output: ' + outPath + ' (' + (newPreset.length / 1024).toFixed(1) + ' KB)');
+const kb = s => (Buffer.byteLength(s, 'utf8') / 1024).toFixed(1);
+console.log('Source preset: ' + basePresetPath + ' (' + kb(basePreset) + ' KB)');
+console.log('Honoka entry: ' + honokaEntryPath + ' (' + kb(honokaEntry) + ' KB)');
+console.log('World lores: ' + worldLoresPath + ' (' + kb(worldLores) + ' KB -> ' + kb(before + honokaEntry + after) + ' KB combined)');
+console.log('Output: ' + outPath + ' (' + kb(newPreset) + ' KB)');
 
 // Verify
 const count = (newPreset.match(/^world_lores:/gm) || []).length;
