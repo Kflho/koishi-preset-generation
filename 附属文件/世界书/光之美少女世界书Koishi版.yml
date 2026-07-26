@@ -9377,7 +9377,6 @@ world_lores:
   - keywords:
       - 天空市
     content: |-
-#天空市的光之美少女
       ```yaml
       天空市_precure_summary:
         location: "天空市"
@@ -9393,7 +9392,6 @@ world_lores:
   - keywords:
       - 动物小镇
     content: |-
-#动物小镇的光之美少女
       ```yaml
       动物小镇_precure_summary:
         location: "动物小镇"
@@ -9408,7 +9406,6 @@ world_lores:
   - keywords:
       - 大贝市
     content: |-
-#大贝市的光之美少女
       ```yaml
       大贝市_precure_summary:
         location: "大贝市"
@@ -9422,7 +9419,6 @@ world_lores:
   - keywords:
       - 希望花市
     content: |-
-#希望花市的光之美少女
       ```yaml
       希望花市_precure_summary:
         location: "希望花市"
@@ -9437,7 +9433,6 @@ world_lores:
   - keywords:
       - 光之丘
     content: |-
-#光之丘的光之美少女
       ```yaml
       光之丘_precure_summary:
         location: "光之丘"
@@ -9452,7 +9447,6 @@ world_lores:
   - keywords:
       - 津成木
     content: |-
-#津成木的光之美少女
       ```yaml
       津成木_precure_summary:
         location: "津成木"
@@ -9466,7 +9460,6 @@ world_lores:
   - keywords:
       - 花道镇
     content: |-
-#花道镇的光之美少女
       ```yaml
       花道镇_precure_summary:
         location: "花道镇"
@@ -9482,7 +9475,6 @@ world_lores:
   - keywords:
       - 草莓坂中学
     content: |-
-#草莓坂中学的光之美少女
       ```yaml
       草莓坂中学_precure_summary:
         location: "草莓坂中学"
@@ -9498,7 +9490,6 @@ world_lores:
   - keywords:
       - 七色丘
     content: |-
-#七色丘的光之美少女
       ```yaml
       七色丘_precure_summary:
         location: "七色丘"
@@ -9514,7 +9505,6 @@ world_lores:
   - keywords:
       - 加音町
     content: |-
-#加音町的光之美少女
       ```yaml
       加音町_precure_summary:
         location: "加音町"
@@ -9529,7 +9519,6 @@ world_lores:
   - keywords:
       - 健康市
     content: |-
-#健康市的光之美少女
       ```yaml
       健康市_precure_summary:
         location: "健康市"
@@ -9544,7 +9533,6 @@ world_lores:
   - keywords:
       - 四叶镇
     content: |-
-#四叶镇的光之美少女
       ```yaml
       四叶镇_precure_summary:
         location: "四叶镇"
@@ -9559,7 +9547,6 @@ world_lores:
   - keywords:
       - 虹之园市
     content: |-
-#虹之园市的光之美少女
       ```yaml
       虹之园市_precure_summary:
         location: "虹之园市"
@@ -9573,7 +9560,6 @@ world_lores:
   - keywords:
       - 绿之乡
     content: |-
-#绿之乡的光之美少女
       ```yaml
       绿之乡_precure_summary:
         location: "绿之乡"
@@ -9586,7 +9572,6 @@ world_lores:
   - keywords:
       - 美味小镇
     content: |-
-#美味小镇的光之美少女
       ```yaml
       美味小镇_precure_summary:
         location: "美味小镇"
@@ -9601,7 +9586,6 @@ world_lores:
   - keywords:
       - 希望之花镇
     content: |-
-#希望之花镇的光之美少女
       ```yaml
       希望之花镇_precure_summary:
         location: "希望之花镇"
@@ -9618,7 +9602,6 @@ world_lores:
   - keywords:
       - 观星町
     content: |-
-#观星町的光之美少女
       ```yaml
       观星町_precure_summary:
         location: "观星町"
@@ -9634,7 +9617,6 @@ world_lores:
   - keywords:
       - 蓝天市
     content: |-
-#蓝天市的光之美少女
       ```yaml
       蓝天市_precure_summary:
         location: "蓝天市"
@@ -9650,7 +9632,6 @@ world_lores:
   - keywords:
       - 私立诺布尔学园
     content: |-
-#私立诺布尔学园的光之美少女
       ```yaml
       私立诺布尔学园_precure_summary:
         location: "私立诺布尔学园"
@@ -9665,7 +9646,6 @@ world_lores:
   - keywords:
       - 未来学园
     content: |-
-#未来学园的光之美少女
       ```yaml
       未来学园_precure_summary:
         location: "未来学园"
@@ -9680,7 +9660,6 @@ world_lores:
   - keywords:
       - 闪亮市
     content: |-
-#闪亮市的光之美少女
       ```yaml
       闪亮市_precure_summary:
         location: "闪亮市"
@@ -9695,7 +9674,6 @@ world_lores:
   - keywords:
       - 私立明堂学园
     content: |-
-#私立明堂学园的光之美少女
       ```yaml
       私立明堂学园_precure_summary:
         location: "私立明堂学园"
@@ -9710,7 +9688,6 @@ world_lores:
   - keywords:
       - 光之丘学园
     content: |-
-#光之丘学园的光之美少女
       ```yaml
       光之丘学园_precure_summary:
         location: "光之丘学园"
@@ -9723,7 +9700,6 @@ world_lores:
   - keywords:
       - 真未来市
     content: |-
-#真未来市的光之美少女
       ```yaml
       真未来市_precure_summary:
         location: "真未来市"
@@ -9737,7 +9713,6 @@ world_lores:
   - keywords:
       - 公主组
     content: |-
-#公主组的光之美少女
       ```yaml
       公主组_precure_summary:
         location: "公主组"

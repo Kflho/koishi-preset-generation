@@ -277,9 +277,7 @@ world_lores:
       ```
 
   - keywords:
-      - 公主组
       - Cure Flora
-      - 私立诺布尔学园
       - 春野
       - 春野遥
     content: |-
@@ -399,8 +397,6 @@ world_lores:
       - 野乃
       - 野乃花
       - Cure Yell
-      - 未来学园
-      - 闪亮市
     content: |-
       ```yaml
       Character_id: "HP-01"
@@ -586,8 +582,6 @@ world_lores:
 
   - keywords:
       - Cure Mermaid
-      - 公主组
-      - 私立诺布尔学园
       - 海藤
       - 海藤南
     content: |-
@@ -711,8 +705,6 @@ world_lores:
   - keywords:
       - 天之川绮罗
       - Cure Twinkle
-      - 公主组
-      - 私立诺布尔学园
       - 梦之滨
     content: |-
       ```yaml
@@ -820,8 +812,6 @@ world_lores:
 
   - keywords:
       - 红城
-      - 永久
-      - 公主组
       - Cure Scarlet
     content: |-
       ```yaml
@@ -925,8 +915,6 @@ world_lores:
       ```
 
   - keywords:
-      - 未来学园
-      - 闪亮市
       - 抱美
       - 抱碳
       - 初美
@@ -1018,7 +1006,6 @@ world_lores:
       - 药师寺
       - 纱绫
       - Cure Ange
-      - 闪亮市
     content: |-
       ```yaml
       Character_id: "HP-02"
@@ -1184,8 +1171,6 @@ world_lores:
       - 辉木
       - 辉木誉
       - Cure Étoile
-      - 未来学园
-      - 闪亮市
     content: |-
       
       ```yaml
@@ -1371,7 +1356,6 @@ world_lores:
       - 索拉
       - 天空天使
       - Cure Sky
-      - 天空市
     content: |-
       ```yaml
       Character_id: "HS-01"
@@ -1553,7 +1537,6 @@ world_lores:
       - 棱镜天使
       - Cure Prism
       - 空都市立中学
-      - 天空市
     content: |-
       ```yaml
       Character_id: "HS-02"
@@ -1725,7 +1708,6 @@ world_lores:
       - Cure Butterfly
       - 蝴蝶天使
       - 空都保育专门学校
-      - 天空市
     content: |-
       ```yaml
       Character_id: "HS-04"
@@ -1886,7 +1868,6 @@ world_lores:
       - 夕凪翼
       - 羽翼天使
       - Cure Wing
-      - 天空市
     content: |-
       ```yaml
       Character_id: "HS-03"
@@ -2056,7 +2037,6 @@ world_lores:
       - 艾尔
       - Cure Majesty
       - 庄严天使
-      - 天空市
     content: |-
       ```yaml
       Character_id: "HS-05"
@@ -2200,7 +2180,6 @@ world_lores:
       - 精彩天使
       - 美妙天使
       - 美好天使
-      - 动物小镇
     content: |-
       ```yaml
       Character_id: "WP-01"
@@ -2393,7 +2372,6 @@ world_lores:
       - Cure Friendy
       - 友爱天使
       - 彩羽
-      - 动物小镇
     content: |-
       ```yaml
       Character_id: "WP-02"
@@ -2559,7 +2537,6 @@ world_lores:
   - keywords:
       - 相田
       - 相田爱
-      - 大贝市
     content: |-
       ```yaml
       Character_id: "DD-01"
@@ -2686,7 +2663,6 @@ world_lores:
   - keywords:
       - 菱川
       - 六花
-      - 大贝市
     content: |-
       ```yaml
       Character_id: "DD-02"
@@ -2925,7 +2901,6 @@ world_lores:
   - keywords:
       - 剑崎
       - 真琴
-      - 大贝市
     content: |-
       ```yaml
       Character_id: "DD-04"
@@ -3226,8 +3201,6 @@ world_lores:
       - 抓心组
       - 月光天使
       - 名字里有很多o的女人
-      - 私立明堂学园
-      - 希望花市
     content: |-
       ```yaml
       
@@ -3558,7 +3531,6 @@ world_lores:
       - 惠美瑠
       - 爱崎
       - Cure Macherie
-      - 未来学园
     content: |-
       ```yaml
       - character_id: "HUG-04"
@@ -3769,9 +3741,7 @@ world_lores:
       ```
 
   - keywords:
-      - 真未来市
       - 小林
-      - 未来
     content: |-
       ```yaml
       Character_id: "SD-02"
@@ -3957,7 +3927,6 @@ world_lores:
       ```
 
   - keywords:
-      - 真未来市
       - 明智
       - 安娜
       - Cure Answer
@@ -4145,7 +4114,6 @@ world_lores:
       ```
 
   - keywords:
-      - 美味小镇
       - 果彩天音
       - 菓彩天音
       - 珍柔
@@ -4214,8 +4182,6 @@ world_lores:
       - 花咲
       - 花咲蕾
       - 花蕾天使
-      - 私立明堂学园
-      - 希望花市
     content: |-
       ```yaml
       Character_id: "HC-01"
@@ -4330,8 +4296,6 @@ world_lores:
       - 绘里香
       - 海天使
       - Cure Marine
-      - 私立明堂学园
-      - 希望花市
       - 马琳
     content: |-
       ```yaml
@@ -4454,8 +4418,6 @@ world_lores:
       - 明堂院
       - 明堂院树
       - Cure Sunshine
-      - 私立明堂学园
-      - 希望花市
     content: |-
       ```yaml
       Character_id: "HC-03"
@@ -4537,7 +4499,6 @@ world_lores:
   - keywords:
       - 月影百合
       - 暗之美少女
-      - 希望花市
     content: |-
       ```yaml
       - character_id: "HC-V01"
@@ -4652,7 +4613,6 @@ world_lores:
       - 琉琉歌
       - 奥秘天使
       - 秘法天使
-      - 真未来市
     content: |-
       ```yaml
       character_id: "SD-03"
@@ -4813,7 +4773,6 @@ world_lores:
 
   - keywords:
       - 兔山悟
-      - 动物小镇
       - 兔山
     content: |-
       ```yaml
@@ -4933,7 +4892,6 @@ world_lores:
       ```
 
   - keywords:
-      - 动物小镇
       - 兔山
       - 大福
     content: |-
@@ -5062,7 +5020,6 @@ world_lores:
       - 猫屋敷雪
       - Cure Nyammy
       - 喵喵天使
-      - 小雪
     content: |-
       ```yaml
       Character_id: "WP-03"
@@ -5254,7 +5211,6 @@ world_lores:
       - Cure Lillian
       - 莉莉安天使
       - 结缘天使
-      - 小雪
     content: |-
       ```yaml
       Character_id: "WP-04"
@@ -5414,8 +5370,6 @@ world_lores:
       - 爱乃
       - 爱乃惠
       - cure lovely
-      - 光之丘
-      - 光之丘学园
     content: |-
       ```yaml
       - character_id: "HCPC-01"
@@ -5484,7 +5438,6 @@ world_lores:
   - keywords:
       - 白雪
       - Cure Princess
-      - 光之丘
     content: |-
       ```yaml
       - character_id: "HCPC-02"
@@ -5562,8 +5515,6 @@ world_lores:
       - 大森
       - 悠子
       - Cure Honey
-      - 光之丘
-      - 光之丘学园
     content: |-
       ```yaml
       - character_id: "HCPC-03"
@@ -5635,7 +5586,6 @@ world_lores:
       - 冰川
       - 伊奈绪
       - Cure Fortune
-      - 光之丘
     content: |-
       ```yaml
       - character_id: "HCPC-04"
@@ -5705,9 +5655,7 @@ world_lores:
 
   - keywords:
       - 蔚蓝
-      - blue
       - 蓝神
-      - 光之丘
     content: |-
       ```yaml
       - character_id: "HCPC-GOD-01"
@@ -5764,8 +5712,6 @@ world_lores:
 
   - keywords:
       - 朝日奈
-      - 未来
-      - 津成木
     content: |-
       ```yaml
       - character_id: "MTP-01"
@@ -5843,7 +5789,6 @@ world_lores:
   - keywords:
       - 十六夜
       - 理子
-      - 津成木
     content: |-
       ```yaml
       - character_id: "MTP-02"
@@ -5919,7 +5864,6 @@ world_lores:
       - 花海
       - 言叶
       - 帕拉拉
-      - 津成木
     content: |-
       ```yaml
       - character_id: "MTP-03"
@@ -5985,7 +5929,6 @@ world_lores:
   - keywords:
       - 咲良
       - 咲良歌
-      - 花道镇
     content: |-
       ```yaml
       - character_id: "IDOL-01"
@@ -6051,7 +5994,6 @@ world_lores:
   - keywords:
       - 苍风
       - 奈奈
-      - 花道镇
     content: |-
       ```yaml
       - character_id: "IDOL-02"
@@ -6114,7 +6056,6 @@ world_lores:
   - keywords:
       - 紫雨
       - 紫雨心
-      - 花道镇
     content: |-
       ```yaml
       - character_id: "IDOL-03"
@@ -6177,7 +6118,6 @@ world_lores:
   - keywords:
       - 普莉莉珂
       - 普利伦
-      - 花道镇
     content: |-
       ```yaml
       - character_id: "IDOL-04"
@@ -6236,7 +6176,6 @@ world_lores:
       ```
 
   - keywords:
-      - 观星町
       - 羽衣拉拉
     content: |-
       ```yaml
@@ -6300,7 +6239,6 @@ world_lores:
   - keywords:
       - 普洛伦
       - 田中玫珑
-      - 花道镇
     content: |-
       ```yaml
       - character_id: "IDOL-05"
@@ -6363,8 +6301,6 @@ world_lores:
       - 宇佐美一花
       - Cure Whip
       - 宇佐美
-      - 一花
-      - 草莓坂中学
     content: |-
       ```yaml
       - character_id: "KIRA-01"
@@ -6440,8 +6376,6 @@ world_lores:
   - keywords:
       - 有栖川向阳
       - 有栖川
-      - 向阳
-      - 草莓坂中学
     content: |-
       ```yaml
       - character_id: "KIRA-02"
@@ -6516,7 +6450,6 @@ world_lores:
   - keywords:
       - 立神葵
       - 立神
-      - 草莓坂中学
     content: |-
       ```yaml
       - character_id: "KIRA-03"
@@ -6591,7 +6524,6 @@ world_lores:
   - keywords:
       - 琴爪
       - 琴爪缘
-      - 草莓坂中学
     content: |-
       ```yaml
       - character_id: "KIRA-04"
@@ -6664,7 +6596,6 @@ world_lores:
   - keywords:
       - 剑城晶
       - 剑城
-      - 草莓坂中学
     content: |-
       ```yaml
       - character_id: "KIRA-05"
@@ -6808,7 +6739,6 @@ world_lores:
   - keywords:
       - 星空
       - 星空幸
-      - 七色丘
     content: |-
       ```yaml
       - character_id: "SMILE-01"
@@ -6880,7 +6810,6 @@ world_lores:
   - keywords:
       - 日野
       - 日野茜
-      - 七色丘
     content: |-
       ```yaml
       - character_id: "SMILE-02"
@@ -6952,7 +6881,6 @@ world_lores:
   - keywords:
       - 黄濑
       - 弥生
-      - 七色丘
     content: |-
       ```yaml
       - character_id: "SMILE-03"
@@ -7024,7 +6952,6 @@ world_lores:
   - keywords:
       - 青木
       - 丽华
-      - 七色丘
     content: |-
       ```yaml
       - character_id: "SMILE-05"
@@ -7094,7 +7021,6 @@ world_lores:
   - keywords:
       - 绿川
       - 绿川直
-      - 七色丘
     content: |-
       ```yaml
       - character_id: "SMILE-04"
@@ -7162,7 +7088,6 @@ world_lores:
       ```
 
   - keywords:
-      - 加音町
       - 北条响
       - 北条
     content: |-
@@ -7241,7 +7166,6 @@ world_lores:
       ```
 
   - keywords:
-      - 加音町
       - 南野奏
       - 南野
     content: |-
@@ -7315,7 +7239,6 @@ world_lores:
       ```
 
   - keywords:
-      - 加音町
       - 黑川
       - 爱莲
       - 赛莲
@@ -7386,7 +7309,6 @@ world_lores:
       ```
 
   - keywords:
-      - 加音町
       - 调边
       - 亚子
     content: |-
@@ -7458,7 +7380,6 @@ world_lores:
 
   - keywords:
       - 花寺和佳
-      - 健康市
       - 花寺
       - 和佳
     content: |-
@@ -7532,7 +7453,6 @@ world_lores:
       ```
 
   - keywords:
-      - 健康市
       - 泽泉知优
       - 泽泉
       - 知优
@@ -7602,10 +7522,8 @@ world_lores:
       ```
 
   - keywords:
-      - 健康市
       - 平光日向
       - 平光
-      - 日向
     content: |-
       ```yaml
       - character_id: "HG-03"
@@ -7672,7 +7590,6 @@ world_lores:
       ```
 
   - keywords:
-      - 健康市
       - 风铃
       - 艾苏米
     content: |-
@@ -7741,7 +7658,6 @@ world_lores:
       ```
 
   - keywords:
-      - 四叶镇
       - 桃园爱
       - 桃园
     content: |-
@@ -7805,7 +7721,6 @@ world_lores:
       ```
 
   - keywords:
-      - 四叶镇
       - 苍乃美希
       - 苍乃
       - 美希
@@ -7872,7 +7787,6 @@ world_lores:
       ```
 
   - keywords:
-      - 四叶镇
       - 山吹祈里
       - 山吹
       - 祈里
@@ -7940,7 +7854,6 @@ world_lores:
       ```
 
   - keywords:
-      - 四叶镇
       - 东刹那
       - 伊斯
     content: |-
@@ -8009,7 +7922,6 @@ world_lores:
       ```
 
   - keywords:
-      - 虹之园市
       - 美墨渚
       - 美墨
       - 渚
@@ -8086,7 +7998,6 @@ world_lores:
       ```
 
   - keywords:
-      - 虹之园市
       - 九条光
       - 九条
       - 小光
@@ -8155,7 +8066,6 @@ world_lores:
       ```
 
   - keywords:
-      - 绿之乡
       - 美翔舞
     content: |-
       ```yaml
@@ -8221,9 +8131,7 @@ world_lores:
       ```
 
   - keywords:
-      - 绿之乡
       - 日向咲
-      - 日向
     content: |-
       ```yaml
       - character_id: "SPLASH-01"
@@ -8288,7 +8196,6 @@ world_lores:
       ```
 
   - keywords:
-      - 美味小镇
       - 和实结
       - 和实
     content: |-
@@ -8365,10 +8272,8 @@ world_lores:
       ```
 
   - keywords:
-      - 美味小镇
       - 芙羽心音
       - 芙羽
-      - 心音
     content: |-
       ```yaml
       - character_id: "DP-02"
@@ -8440,7 +8345,6 @@ world_lores:
       ```
 
   - keywords:
-      - 美味小镇
       - 华满兰
       - 华满
     content: |-
@@ -8511,7 +8415,6 @@ world_lores:
       ```
 
   - keywords:
-      - 希望之花镇
       - 梦原望
       - 梦原
     content: |-
@@ -8580,7 +8483,6 @@ world_lores:
       ```
 
   - keywords:
-      - 希望之花镇
       - 春日野丽
       - 春日野
     content: |-
@@ -8646,7 +8548,6 @@ world_lores:
       ```
 
   - keywords:
-      - 希望之花镇
       - 秋元小町
       - 秋元
       - 小町
@@ -8712,7 +8613,6 @@ world_lores:
       ```
 
   - keywords:
-      - 希望之花镇
       - 水无月香恋
       - 水无月
       - 香恋
@@ -8779,7 +8679,6 @@ world_lores:
       ```
 
   - keywords:
-      - 希望之花镇
       - 夏木玲
       - 夏木
     content: |-
@@ -8845,7 +8744,6 @@ world_lores:
       ```
 
   - keywords:
-      - 希望之花镇
       - Milk
     content: |-
       ```yaml
@@ -8906,7 +8804,6 @@ world_lores:
       ```
 
   - keywords:
-      - 观星町
       - 星奈光
       - 星奈
     content: |-
@@ -8972,7 +8869,6 @@ world_lores:
       ```
 
   - keywords:
-      - 观星町
       - 天宫
       - 爱莲娜
     content: |-
@@ -9035,7 +8931,6 @@ world_lores:
       ```
 
   - keywords:
-      - 观星町
       - 香九矢圆
       - 馒头卡
     content: |-
@@ -9097,7 +8992,6 @@ world_lores:
       ```
 
   - keywords:
-      - 观星町
       - 尤妮
     content: |-
       ```yaml
@@ -9154,9 +9048,7 @@ world_lores:
       ```
 
   - keywords:
-      - 蓝天市
       - 夏海
-      - 真夏
     content: |-
       ```yaml
       - character_id: "TR-01"
@@ -9218,10 +9110,8 @@ world_lores:
       ```
 
   - keywords:
-      - 蓝天市
       - 凉村珊瑚
       - 凉村
-      - 珊瑚
     content: |-
       ```yaml
       - character_id: "TR-02"
@@ -9283,7 +9173,6 @@ world_lores:
       ```
 
   - keywords:
-      - 蓝天市
       - 一之濑实
       - 一之濑
     content: |-
@@ -9346,7 +9235,6 @@ world_lores:
       ```
 
   - keywords:
-      - 蓝天市
       - 泷泽飞鸟
       - 泷泽
       - 飞鸟
@@ -9411,7 +9299,6 @@ world_lores:
       ```
 
   - keywords:
-      - 蓝天市
       - 萝拉·阿波罗多洛斯·海基努斯·拉·梅尔
       - 萝拉
       - 阿波罗多洛斯
@@ -9756,6 +9643,357 @@ world_lores:
           - "【传承】孙女蕾搬来希望花镇后，敏锐地察觉到她的潜质，并在她成为Cure Blossom后，作为前辈给予指导和精神支持。"
           - "【奇迹再临：TV第27话】在蕾等人陷入巨大危机时，为了保护孙女和大家，凭借不屈的意志和残存的力量，奇迹般地再次短暂变身为Cure Flower，展现了传说中战士的压倒性实力，并激励了后辈们。"
       
+      ```
+
+
+  - keywords:
+      - 天空市
+    content: |-
+      ```yaml
+      天空市_precure_summary:
+        location: "天空市"
+        precure_members:
+            - "索拉 (Cure Sky / 天空天使)"
+            - "虹之丘真白 (Cure Prism / 棱镜天使)"
+            - "圣扬羽 (Cure Butterfly / 蝴蝶天使)"
+            - "夕凪翼 (Cure Wing / 羽翼天使)"
+            - "艾尔 (Cure Majesty / 庄严天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 动物小镇
+    content: |-
+      ```yaml
+      动物小镇_precure_summary:
+        location: "动物小镇"
+        precure_members:
+            - "犬饲小麦 (Cure Wonderful / 精彩天使)"
+            - "犬饲彩叶 (Cure Friendy / 友爱天使)"
+            - "兔山悟"
+            - "大福"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 大贝市
+    content: |-
+      ```yaml
+      大贝市_precure_summary:
+        location: "大贝市"
+        precure_members:
+            - "相田爱 (Cure Heart / 心天使)"
+            - "菱川六花 (Cure Diamond / 钻石头天使)"
+            - "剑崎真琴 (Cure Sword / 剑天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 希望花市
+    content: |-
+      ```yaml
+      希望花市_precure_summary:
+        location: "希望花市"
+        precure_members:
+            - "花咲蕾 (Cure Blossom / 花蕾天使)"
+            - "来海绘里香 (Cure Marine / 海天使)"
+            - "明堂院树 (Cure Sunshine / 阳光天使)"
+            - "月影百合 (Cure Moonlight / 月光天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 光之丘
+    content: |-
+      ```yaml
+      光之丘_precure_summary:
+        location: "光之丘"
+        precure_members:
+            - "爱乃惠 (Cure Lovely / 可爱天使)"
+            - "白雪姬 (Cure Princess / 公主天使)"
+            - "大森悠子 (Cure Honey / 蜜糖天使)"
+            - "冰川伊奈绪 (Cure Fortune / 命运天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 津成木
+    content: |-
+      ```yaml
+      津成木_precure_summary:
+        location: "津成木"
+        precure_members:
+            - "朝日奈未来 (Cure Miracle / 奇迹天使)"
+            - "十六夜理子 (Cure Magical / 魔法天使)"
+            - "花海言叶 (Cure Felice / 幸福天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 花道镇
+    content: |-
+      ```yaml
+      花道镇_precure_summary:
+        location: "花道镇"
+        precure_members:
+            - "咲良歌 (Cure Idol / 偶像天使)"
+            - "苍风奈奈 (Cure Wink / 眨眼天使)"
+            - "紫雨心 (Cure Kyun-Kyun / 心动天使)"
+            - "普莉莉珂 (Cure Precious / 珍贵天使)"
+            - "田中玫珑"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 草莓坂中学
+    content: |-
+      ```yaml
+      草莓坂中学_precure_summary:
+        location: "草莓坂中学"
+        precure_members:
+            - "宇佐美一花 (Cure Whip / 奶油天使)"
+            - "有栖川向阳 (Cure Custard / 布丁天使)"
+            - "立神葵 (Cure Gelato / 冰淇淋天使)"
+            - "琴爪缘 (Cure Macaron / 马卡龙天使)"
+            - "剑城晶 (Cure Chocolat / 巧克力天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 七色丘
+    content: |-
+      ```yaml
+      七色丘_precure_summary:
+        location: "七色丘"
+        precure_members:
+            - "星空幸 (Cure Happy / 快乐天使)"
+            - "日野茜 (Cure Sunny / 阳光天使)"
+            - "黄濑弥生 (Cure Peace / 和平天使)"
+            - "青木丽华 (Cure Beauty / 美丽天使)"
+            - "绿川直 (Cure March / 进行曲天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 加音町
+    content: |-
+      ```yaml
+      加音町_precure_summary:
+        location: "加音町"
+        precure_members:
+            - "北条响 (Cure Melody / 旋律天使)"
+            - "南野奏 (Cure Rhythm / 节奏天使)"
+            - "黑川爱莲 (Cure Beat / 节拍天使)"
+            - "调边亚子 (Cure Muse / 缪斯天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 健康市
+    content: |-
+      ```yaml
+      健康市_precure_summary:
+        location: "健康市"
+        precure_members:
+            - "花寺和佳 (Cure Grace / 恩典天使)"
+            - "泽泉知优 (Cure Fontaine / 喷泉天使)"
+            - "平光日向 (Cure Sparkle / 闪耀天使)"
+            - "风铃艾苏米 (Cure Earth / 大地天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 四叶镇
+    content: |-
+      ```yaml
+      四叶镇_precure_summary:
+        location: "四叶镇"
+        precure_members:
+            - "桃园爱 (Cure Peach / 蜜桃天使)"
+            - "苍乃美希 (Cure Berry / 蓝莓天使)"
+            - "山吹祈里 (Cure Pine / 凤梨天使)"
+            - "东刹那 (Cure Passion / 百香果天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 虹之园市
+    content: |-
+      ```yaml
+      虹之园市_precure_summary:
+        location: "虹之园市"
+        precure_members:
+            - "雪城穗乃香 (Cure White)"
+            - "美墨渚 (Cure Black)"
+            - "九条光 (Shiny Luminous)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 绿之乡
+    content: |-
+      ```yaml
+      绿之乡_precure_summary:
+        location: "绿之乡"
+        precure_members:
+            - "日向咲 (Cure Bloom / 花天使)"
+            - "美翔舞 (Cure Egret / 鹭天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 美味小镇
+    content: |-
+      ```yaml
+      美味小镇_precure_summary:
+        location: "美味小镇"
+        precure_members:
+            - "果彩天音 (Cure Yum-Yum / 美味天使)"
+            - "和实结 (Cure Precious / 珍贵天使)"
+            - "芙羽心音 (Cure Spicy / 香辣天使)"
+            - "华满兰 (Cure Finale / 终曲天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 希望之花镇
+    content: |-
+      ```yaml
+      希望之花镇_precure_summary:
+        location: "希望之花镇"
+        precure_members:
+            - "梦原望 (Cure Dream / 梦天使)"
+            - "春日野丽 (Cure Lemonade / 柠檬水天使)"
+            - "秋元小町 (Cure Mint / 薄荷天使)"
+            - "水无月香恋 (Cure Aqua / 水天使)"
+            - "夏木玲 (Cure Rouge / 胭脂天使)"
+            - "Milk / 美尔波 (Milky Rose / 妙奇露丝)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 观星町
+    content: |-
+      ```yaml
+      观星町_precure_summary:
+        location: "观星町"
+        precure_members:
+            - "羽衣拉拉 (Cure Milky / 银河天使)"
+            - "星奈光 (Cure Star / 星星天使)"
+            - "天宫爱莲娜 (Cure Soleil / 太阳天使)"
+            - "香九矢圆 (Cure Selene / 月亮天使)"
+            - "尤妮 (Cure Cosmo / 宇宙天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 蓝天市
+    content: |-
+      ```yaml
+      蓝天市_precure_summary:
+        location: "蓝天市"
+        precure_members:
+            - "夏海真夏 (Cure Summer / 夏日天使)"
+            - "凉村珊瑚 (Cure Coral / 珊瑚天使)"
+            - "一之濑实 (Cure Papaya / 木瓜天使)"
+            - "泷泽飞鸟 (Cure Flamingo / 火烈鸟天使)"
+            - "萝拉 (Cure La Mer / 海洋天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 私立诺布尔学园
+    content: |-
+      ```yaml
+      私立诺布尔学园_precure_summary:
+        location: "私立诺布尔学园"
+        precure_members:
+            - "春野遥 (Cure Flora / 花神天使)"
+            - "海藤南 (Cure Mermaid / 人鱼天使)"
+            - "天之川绮罗 (Cure Twinkle / 星光天使)"
+            - "红城永久 (Cure Scarlet / 绯红天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 未来学园
+    content: |-
+      ```yaml
+      未来学园_precure_summary:
+        location: "未来学园"
+        precure_members:
+            - "野乃花 (Cure Yell / 喝彩天使)"
+            - "药师寺纱绫 (Cure Ange / 安祈天使)"
+            - "辉木誉 (Cure Étoile / 星辰天使)"
+            - "爱崎惠美瑠 (Cure Macherie / 亲爱天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 闪亮市
+    content: |-
+      ```yaml
+      闪亮市_precure_summary:
+        location: "闪亮市"
+        precure_members:
+            - "野乃花 (Cure Yell / 喝彩天使)"
+            - "抱美/抱碳 (明日天使)"
+            - "药师寺纱绫 (Cure Ange / 安祈天使)"
+            - "辉木誉 (Cure Étoile / 星辰天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 私立明堂学园
+    content: |-
+      ```yaml
+      私立明堂学园_precure_summary:
+        location: "私立明堂学园"
+        precure_members:
+            - "月影百合 (Cure Moonlight / 月光天使)"
+            - "花咲蕾 (Cure Blossom / 花蕾天使)"
+            - "来海绘里香 (Cure Marine / 海天使)"
+            - "明堂院树 (Cure Sunshine / 阳光天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 光之丘学园
+    content: |-
+      ```yaml
+      光之丘学园_precure_summary:
+        location: "光之丘学园"
+        precure_members:
+            - "爱乃惠 (Cure Lovely / 可爱天使)"
+            - "大森悠子 (Cure Honey / 蜜糖天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 真未来市
+    content: |-
+      ```yaml
+      真未来市_precure_summary:
+        location: "真未来市"
+        precure_members:
+            - "小林未来"
+            - "明智安娜 (Cure Answer / 真相天使)"
+            - "森亚露露卡 (Cure Mystic / 奥秘天使)"
+        note: "详细角色信息请使用角色名关键词查询"
+      ```
+
+  - keywords:
+      - 公主组
+    content: |-
+      ```yaml
+      公主组_precure_summary:
+        location: "公主组"
+        precure_members:
+            - "春野遥 (Cure Flora / 花神天使)"
+            - "海藤南 (Cure Mermaid / 人鱼天使)"
+            - "天之川绮罗 (Cure Twinkle / 星光天使)"
+            - "红城永久 (Cure Scarlet / 绯红天使)"
+        note: "详细角色信息请使用角色名关键词查询"
       ```
 
 
