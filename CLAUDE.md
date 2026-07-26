@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **`world_lores` 段**（角色背景知识库）：约 790 KB，**按关键词触发、按需加载**
   - `constant: true` 条目 = 每条消息注入（当前为 **0 个**）
   - 关键词条目 = 仅当聊天内容命中关键词时才加载对应条目
-  - `tokenLimit: 2000` = 单次关键词匹配注入上限（约 2000 tokens）
+  - `tokenLimit: 1000` = 单次关键词匹配注入上限（约 1000 tokens，约等于 1 个角色条目或 2 个城市摘要条目）
 - **`format_user_prompt`**：1 行，格式化用户输入
 
 **结论**：文件大 ≠ 上下文爆炸。世界书是"词典"，不是"全文背诵"。除非用户聊到相关角色/城市，否则那些 420KB 根本不会被模型读到。

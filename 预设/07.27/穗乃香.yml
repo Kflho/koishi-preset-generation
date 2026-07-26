@@ -137,7 +137,7 @@ prompts:
 
 world_lores:
   - scanDepth: 2
-    tokenLimit: 2000
+    tokenLimit: 1000
     recursiveScan: false
     maxRecursionDepth: 3
 
