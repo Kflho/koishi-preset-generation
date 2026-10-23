@@ -9,6 +9,7 @@
     - 虹之园市
     - Max Heart
     - MaxHeart
+  scanDepth: 1
   content: |-
     ```yaml
     Character_id: "PC-02"
