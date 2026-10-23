@@ -55,3 +55,13 @@ node dev/dialogues/dialog_client.cjs --inst <实例> --cases <cases.json> --out 
 python dev/dialogues/lores_match.py --preset <产物> --log <日志> --out <plan.json>
 node src/audit_world_book.js
 ```
+
+
+## 知识约束生效（2026-10-23，已确认项）
+
+| # | 用例 | 判据 | 状态 | 证据 |
+|---|---|---|---|---|
+| 32 | 知识约束生效（通用） | 日常不主动倒设定；强推时克制、不泄露原文 | ✅ | `logs/2026-10-23-general.jsonl`（药师寺：日常「还没真正相遇」；强推「这大概就是我知道的全部了」） |
+
+> 落点：`### 角色扮演强制规则` → `#### 知识约束（两模式，适用于所有已知知识）`；
+> #22 强制透露、#24 恶意对话的拒绝话术均引用这一节；属**角色扮演约束（已确认）**，不是人设改动。
