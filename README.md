@@ -37,5 +37,7 @@ dev/                       开发专属（对话测试脚本、日志、当轮�
 - `bin/reference_docs/prompt-skill-2026-10-23.md`：提示词撰写/修改的执行单（分层、检查项、指标）；
 - `bin/reference_docs/prompt-skill-research-2026-10-23.md`：调研证据卡（ChatLuna 文档/源码、
   SillyTavern、Anthropic 教程）；
-- `bin/reference_docs/character-research-2026-10-23.md`：角色官方设定与二创边界；
+- `bin/reference_docs/research-character-2026-10-23.md`：角色官方设定与二创边界；
+- `bin/reference_docs/research-story-2026-10-23.md`：作品世界观、舞台、时间线与知识边界；
+- `bin/reference_docs/research-tavern-lorebook-2026-10-23.md`：酒馆世界书写法惯例与字段映射；
 - `CLAUDE.md`：构建流水线、YAML 禁区、世界书守则的完整说明。
