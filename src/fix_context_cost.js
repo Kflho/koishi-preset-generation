@@ -5,7 +5,7 @@
 // 3) 角色条目单字关键词 → 全名（保留「渚」）
 const fs = require('fs');
 const path = require('path');
-const p = path.join(__dirname, '../附属文件/世界书/光之美少女世界书Koishi版.yml');
+const p = path.join(__dirname, '../bin/requirements/世界书/光之美少女世界书Koishi版.yml');
 let y = fs.readFileSync(p, 'utf8');
 fs.copyFileSync(p, p + '.bak');
 

@@ -11,8 +11,8 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.join(__dirname, '..');
-const jsonPath = path.join(root, '附属文件/世界书/光之美少女世界书酒馆版.json');
-const koishiPath = path.join(root, '附属文件/世界书/光之美少女世界书Koishi版.yml');
+const jsonPath = path.join(root, 'bin/requirements/世界书/光之美少女世界书酒馆版.json');
+const koishiPath = path.join(root, 'bin/requirements/世界书/光之美少女世界书Koishi版.yml');
 
 // 防重跑：本脚本已于 2026-07-16 执行过（以已注入的条目为标记）
 if (fs.readFileSync(koishiPath, 'utf8').includes('character_id: "ST-03"')) {

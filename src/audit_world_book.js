@@ -1,6 +1,9 @@
 // 临时审计脚本：对照 ChatLuna 预设文档检查世界书格式与上下文风险
 const fs = require('fs');
-const y = fs.readFileSync('附属文件/世界书/光之美少女世界书Koishi版.yml', 'utf8');
+const path = require('path');
+const root = path.join(__dirname, '..');
+const WB = path.join(root, 'bin', 'requirements', '世界书', '光之美少女世界书Koishi版.yml');
+const y = fs.readFileSync(WB, 'utf8');
 const blocks = y.split(/\n(?=  - keywords:)/);
 const entries = blocks.slice(1).map(b => {
   const kwEnd = b.indexOf('    content:');
@@ -51,11 +54,19 @@ for (const e of entries.filter(e => !e.constant)) {
 console.log('  ' + hit + '/' + entries.filter(e => !e.constant).length,
   '个关键词条目会被常驻内容递归触发，涉及', (hitSize / 1024).toFixed(0) + 'K 字符');
 
-console.log('== 6) 旧版（此前一直在用的 26 条版本）对照 ==');
-const old = fs.readFileSync('预设/07.16/backup/穗乃香_集成前备份.yml', 'utf8');
-console.log('  旧版 order 行数:', (old.match(/^    order: /gm) || []).length,
-  '| 旧版常驻条目数:', (old.match(/^    constant: true$/gm) || []).length,
-  '| 旧版 recursiveScan:', (old.match(/recursiveScan: \w+/) || [])[0]);
+console.log('== 6) 旧版对照（现存最早的 07.16 成品）==');
+const oldPath = ['07.16/穗乃香.yml.bak', '07.16/穗乃香.yml']
+  .map(f => path.join(root, 'bin', 'exports', 'presets', f))
+  .find(p => fs.existsSync(p));
+if (oldPath) {
+  const old = fs.readFileSync(oldPath, 'utf8');
+  console.log('  对照文件:', path.relative(root, oldPath));
+  console.log('  旧版 order 行数:', (old.match(/^    order: /gm) || []).length,
+    '| 旧版常驻条目数:', (old.match(/^    constant: true$/gm) || []).length,
+    '| 旧版 recursiveScan:', (old.match(/recursiveScan: \w+/) || [])[0]);
+} else {
+  console.log('  跳过：未找到旧版对照文件');
+}
 console.log('  新版 recursiveScan:', (y.match(/recursiveScan: \w+/) || [])[0],
   '| scanDepth:', (y.match(/scanDepth: (\d+)/) || [])[1],
   '| tokenLimit:', (y.match(/tokenLimit: (\d+)/) || [])[1]);

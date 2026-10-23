@@ -4,7 +4,7 @@
 // v2: 改用关键词签名精确定位待删条目（v1 用内容子串误删了蕾吉娜/咲良歌）
 const fs = require('fs');
 const path = require('path');
-const p = path.join(__dirname, '../附属文件/世界书/光之美少女世界书Koishi版.yml');
+const p = path.join(__dirname, '../bin/requirements/世界书/光之美少女世界书Koishi版.yml');
 let y = fs.readFileSync(p, 'utf8');
 fs.copyFileSync(p, p + '.bak');
 

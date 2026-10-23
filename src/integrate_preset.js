@@ -9,18 +9,18 @@ const today = new Date();
 const pad = n => String(n).padStart(2, '0');
 const dateFolder = argDate || (pad(today.getMonth() + 1) + '.' + pad(today.getDate()));
 
-const basePresetPath = path.join(root, '附属文件/穗乃香_预设/穗乃香_预设.yml');
-const worldLoresPath = path.join(root, '附属文件/世界书/光之美少女世界书Koishi版.yml');
-const honokaEntryPath = path.join(root, '附属文件/世界书/穗乃香_世界书.yml');
+const basePresetPath = path.join(root, 'bin/requirements/穗乃香_预设/穗乃香_预设.yml');
+const worldLoresPath = path.join(root, 'bin/requirements/世界书/光之美少女世界书Koishi版.yml');
+const honokaEntryPath = path.join(root, 'bin/requirements/世界书/穗乃香_世界书.yml');
 
-const outDir = path.join(root, '预设', dateFolder);
+const outDir = path.join(root, 'bin', 'exports', 'presets', dateFolder);
 const backupDir = path.join(outDir, 'backup');
 const outPath = path.join(outDir, '穗乃香.yml');
 
 // Create output directories if needed
 fs.mkdirSync(outDir, { recursive: true });
 fs.mkdirSync(backupDir, { recursive: true });
-console.log('Target: 预设/' + dateFolder + '/');
+console.log('Target: bin/exports/presets/' + dateFolder + '/');
 
 // Read files
 const basePreset = fs.readFileSync(basePresetPath, 'utf8');

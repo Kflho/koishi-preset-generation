@@ -1,9 +1,9 @@
 /**
  * 预设文件格式校验脚本
  * 对照 ChatLuna 预设文档逐项检查生成的预设是否符合规范
- * 用法: node scripts/validate_preset.js [日期|路径]
- *   不带参数 → 校验今天的 预设/<MM.DD>/穗乃香.yml
- *   带日期   → 校验 预设/<MM.DD>/穗乃香.yml
+ * 用法: node src/validate_preset.js [日期|路径]
+ *   不带参数 → 校验今天的 bin/exports/presets/<MM.DD>/穗乃香.yml
+ *   带日期   → 校验 bin/exports/presets/<MM.DD>/穗乃香.yml
  *   带路径   → 校验指定 .yml 文件
  */
 
@@ -18,11 +18,11 @@ let targetPath;
 if (arg && arg.endsWith('.yml')) {
   targetPath = path.resolve(arg);
 } else if (arg && /^\d{2}\.\d{2}$/.test(arg)) {
-  targetPath = path.join(root, '预设', arg, '穗乃香.yml');
+  targetPath = path.join(root, 'bin', 'exports', 'presets', arg, '穗乃香.yml');
 } else {
   const d = new Date();
   const pad = n => String(n).padStart(2, '0');
-  targetPath = path.join(root, '预设', pad(d.getMonth() + 1) + '.' + pad(d.getDate()), '穗乃香.yml');
+  targetPath = path.join(root, 'bin', 'exports', 'presets', pad(d.getMonth() + 1) + '.' + pad(d.getDate()), '穗乃香.yml');
 }
 
 console.log('校验目标: ' + targetPath + '\n');
@@ -283,6 +283,23 @@ if (wlTop < 0) {
   if (wlMulti > 1) errors.push(wlMulti + ' 个 world_lores 段 (应 1 个)');
   console.log('  world_lores 段数: ' + wlMulti + (wlMulti === 1 ? ' ✓' : ' ⚠️'));
 
+  // 5d. config.loreBooksPrompt（世界书注入包装）
+  const lbMatch = raw.match(/^[ \t]*loreBooksPrompt[ \t]*:[ \t]*\|-?[ \t]*\r?\n((?:[ \t]+\S[^\n]*\r?\n?)+)/m);
+  if (!lbMatch) {
+    warnings.push('未设置 config.loreBooksPrompt：世界书会以裸文本作为 human 消息注入，模型易当成用户发来的资料');
+    console.log('  loreBooksPrompt: 未设置 ⚠️');
+  } else {
+    const tpl = lbMatch[1];
+    const braces = (tpl.match(/\{/g) || []).length;
+    if (!tpl.includes('{input}')) {
+      errors.push('config.loreBooksPrompt 缺少 {input} 占位符，世界书内容不会插入');
+    } else if (braces !== 1) {
+      warnings.push('config.loreBooksPrompt 含 ' + braces + ' 个 {，除 {input} 外会被当成模板变量');
+    } else {
+      console.log('  loreBooksPrompt: {input} ✓');
+    }
+  }
+
   // 5d. Empty blocks: entry with keywords but no content
   entries.forEach((e, i) => {
     if (e.keywords.length > 0 && !e.blockScalar && !e.hasContent) {
@@ -311,5 +328,5 @@ if (errors.length === 0 && warnings.length === 0) {
   }
 }
 
-console.log('\n规范: 附属文件/预设文档.md + CLAUDE.md §世界书条目编写守则');
+console.log('\n规范: bin/requirements/预设文档.md + CLAUDE.md §世界书条目编写守则');
 process.exit(errors.length > 0 ? 1 : 0);

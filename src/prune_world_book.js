@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const SRC = path.join(__dirname, '..', '附属文件', '世界书', '光之美少女世界书Koishi版.yml');
+const SRC = path.join(__dirname, '..', 'bin', 'requirements', '世界书', '光之美少女世界书Koishi版.yml');
 
 // ─── 高危关键词修复表 ───
 // { targetEntryKeyword: { old: '要删除的短关键词', new: '替换为的全名' } }

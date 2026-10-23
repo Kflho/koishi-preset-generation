@@ -8,14 +8,14 @@ const root = path.join(__dirname, '..');
 // 确需重新提取时，先备份 Koishi 版，再加 --force 参数运行。
 if (!process.argv.includes('--force')) {
   console.error('⚠️  光之美少女世界书Koishi版.yml 是手动维护的主文件，重跑会覆盖手动修改。');
-  console.error('   确认要从酒馆版 JSON 重新提取，请运行: node scripts/convert_world_book.js --force');
+  console.error('   确认要从酒馆版 JSON 重新提取，请运行: node src/convert_world_book.js --force');
   process.exit(1);
 }
 
 // Read source world book
 const source = JSON.parse(
   fs.readFileSync(
-    path.join(root, '附属文件/世界书/光之美少女世界书酒馆版.json'),
+    path.join(root, 'bin/requirements/世界书/光之美少女世界书酒馆版.json'),
     'utf8'
   )
 );
@@ -136,7 +136,7 @@ for (const entry of constantEntries) {
 }
 
 // Write output
-const outPath = path.join(root, '附属文件/世界书/光之美少女世界书Koishi版.yml');
+const outPath = path.join(root, 'bin/requirements/世界书/光之美少女世界书Koishi版.yml');
 fs.writeFileSync(outPath, yaml, 'utf8');
 console.log(`Written to: ${outPath}`);
 console.log(`Output size: ${(fs.statSync(outPath).size / 1024).toFixed(1)} KB`);

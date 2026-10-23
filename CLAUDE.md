@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # 穗乃香角色预设工作指南
 
-本仓库维护 Koishi/ChatLuna 用的「雪城穗乃香」角色预设：把预设源文件与世界书拼接成最终可加载的预设文件，按日期归档到 `预设/<MM.DD>/穗乃香.yml`。
+本仓库维护 Koishi/ChatLuna 用的「雪城穗乃香」角色预设：把预设源文件与世界书拼接成最终可加载的预设文件，按日期归档到 `bin/exports/presets/<MM.DD>/穗乃香.yml`（生成物，不入库）。
 
 ## 预设文件大小说明（重要：防止 AI 误判）
 
@@ -19,26 +19,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - `tokenLimit: 1000` = 单次关键词匹配注入上限（约 1000 tokens，约等于 1 个角色条目或 2 个城市摘要条目）
 - **`format_user_prompt`**：1 行，格式化用户输入
 
-**结论**：文件大 ≠ 上下文爆炸。世界书是"词典"，不是"全文背诵"。除非用户聊到相关角色/城市，否则那些 420KB 根本不会被模型读到。
+**结论**：文件大 ≠ 上下文爆炸。世界书是"词典"，不是"全文背诵"。除非用户聊到相关角色/城市，否则那 790KB 根本不会被模型读到。
 
 ## 常用命令
 
 ```bash
-node scripts/integrate_preset.js              # 拼接预设 + 世界书 → 预设/<今天日期>/穗乃香.yml（日常命令）
-node scripts/integrate_preset.js 07.18        # 指定日期（如需要覆盖历史版本）
-node scripts/validate_preset.js               # 预设格式校验（改世界书后必须跑！不加参数=检查今天生成的）
-node scripts/validate_preset.js 07.27         # 校验指定日期的预设
-node scripts/audit_world_book.js              # 世界书体检：常驻大小/单字关键词/递归风险/连环触发
-node scripts/prune_world_book.js              # 世界书精简：高危关键词修复+城市摘要（重大重构时用，已执行）
-node scripts/convert_world_book.js --force    # 一次性：酒馆 JSON → Koishi 世界书 YAML（会覆盖手动修改，勿随意重跑）
+node src/integrate_preset.js              # 拼接预设 + 世界书 → bin/exports/presets/<今天日期>/穗乃香.yml（日常命令）
+node src/integrate_preset.js 07.18        # 指定日期（如需要覆盖历史版本）
+node src/validate_preset.js               # 预设格式校验（改世界书后必须跑！不加参数=检查今天生成的）
+node src/validate_preset.js 07.27         # 校验指定日期的预设
+node src/audit_world_book.js              # 世界书体检：常驻大小/单字关键词/递归风险/连环触发
+node src/prune_world_book.js              # 世界书精简：高危关键词修复+城市摘要（重大重构时用，已执行）
+node src/convert_world_book.js --force    # 一次性：酒馆 JSON → Koishi 世界书 YAML（会覆盖手动修改，勿随意重跑）
 ```
 
 **⚠️ 修改世界书源文件后的强制流程：**
 ```bash
-node scripts/validate_preset.js   # 先校验源文件对应的已生成预设是否干净（如已有历史版本）
-# → 编辑 附属文件/世界书/光之美少女世界书Koishi版.yml
-node scripts/integrate_preset.js  # 重新集成
-node scripts/validate_preset.js   # 校验新生成的预设
+node src/validate_preset.js   # 先校验源文件对应的已生成预设是否干净（如已有历史版本）
+# → 编辑 bin/requirements/世界书/光之美少女世界书Koishi版.yml
+node src/integrate_preset.js  # 重新集成
+node src/validate_preset.js   # 校验新生成的预设
 # → validate 通过（0 errors）后才能 git commit
 ```
 
@@ -62,7 +62,7 @@ git log --oneline
 git diff HEAD~1                 # 查看上次提交的改动
 ```
 
-- `.gitignore` 已排除 `预设/` 目录（生成物）和 `*.bak` 文件
+- `.gitignore` 已排除 `bin/exports/`（生成物）、`bin/data/` 内容（中间产物，保留 `.gitkeep` 占位）、`dev/`（开发专属）和 `*.bak` 文件
 - 重大重构前确保工作区干净（`git status` 无未提交改动）
 - 修改世界书源文件后必须重跑 `integrate_preset.js`
 
@@ -70,11 +70,11 @@ git diff HEAD~1                 # 查看上次提交的改动
 
 **核心规则：`光之美少女世界书酒馆版.json` 是只读原文件，任何情况下不得修改。所有世界书内容修改（关键词、条目内容、增删条目）直接在 `光之美少女世界书Koishi版.yml` 中手动进行。**
 
-手动维护的文件：`穗乃香_预设.yml`、`穗乃香_世界书.yml`、`光之美少女世界书Koishi版.yml`；最终输出 `预设/<日期>/穗乃香.yml` 是生成物，不要手改。
+手动维护的文件：`穗乃香_预设.yml`、`穗乃香_世界书.yml`、`光之美少女世界书Koishi版.yml`；最终输出 `bin/exports/presets/<日期>/穗乃香.yml` 是生成物，不要手改。
 
 1. **`convert_world_book.js`**（一次性提取，已完成）：从酒馆（SillyTavern）格式 JSON 提取启用（`!disable`）条目，生成 `光之美少女世界书Koishi版.yml` 初稿。此后 Koishi 版即为手动维护的主文件——**重跑此脚本会覆盖所有手动修改**（脚本已加 `--force` 保护）。转换细节：`selective=true` 的条目丢弃 `keysecondary`；keyword 触发条目在前，constant（常驻）条目在后；文件头部为无 keywords 的全局配置条目（scanDepth/tokenLimit 等）。
-   - 2026-07-16 已用 `scripts/extract_disabled_entries.js`（一次性，已加防重跑保护）把酒馆版中原禁用条目也提取进 Koishi 版：同角色「普通/满级」双版本只取满级、关键词取并集；私设/原设冲突取原设；跳过 {{user}} 条目与空条目。雪城穗乃香自身条目未提取（与手动条目重复），其 Max Heart 知识归并为 `穗乃香_世界书.yml` 中「第二部_Max_Heart_未来知识」版块（框定为尚未发生的未来，按「其他光之美少女知识→应对方式」的口径回答）。
-   - 2026-07-16 已按用户决定清理作者私设（`scripts/prune_fanon.js`，一次性）：删除「心之钻石/法则」心理分析段（66 处）、世界观构建 5 条同世界框架（基础法则/世界概况/地理划分/反派组织/暗之力）、作者评述句、私设角色普卡、开局-和平。保留 SD 系列（真未来市）、EX 电影角色、转生表述。
+   - 2026-07-16 已用 `src/extract_disabled_entries.js`（一次性，已加防重跑保护）把酒馆版中原禁用条目也提取进 Koishi 版：同角色「普通/满级」双版本只取满级、关键词取并集；私设/原设冲突取原设；跳过 {{user}} 条目与空条目。雪城穗乃香自身条目未提取（与手动条目重复），其 Max Heart 知识归并为 `穗乃香_世界书.yml` 中「第二部_Max_Heart_未来知识」版块（框定为尚未发生的未来，按「其他光之美少女知识→应对方式」的口径回答）。
+   - 2026-07-16 已按用户决定清理作者私设（`src/prune_fanon.js`，一次性）：删除「心之钻石/法则」心理分析段（66 处）、世界观构建 5 条同世界框架（基础法则/世界概况/地理划分/反派组织/暗之力）、作者评述句、私设角色普卡、开局-和平。保留 SD 系列（真未来市）、EX 电影角色、转生表述。
 2. **`integrate_preset.js`**：
    - 将 `穗乃香_世界书.yml` 插入为 world_lores 的**第一个** keywords 条目。该文件为可读性书写时不带 2 空格缩进，脚本会自动缩进，并剥离 `#` 注释行与空行。
    - 将整个 world_lores 块插入预设源文件中 `format_user_prompt:` 之前。
@@ -112,12 +112,12 @@ git diff HEAD~1                 # 查看上次提交的改动
 - **禁止在 `content: |-` 块内使用行首 `#` 注释**（YAML 会将其视为顶级注释而非块内容）
 - **禁止在源 YAML 文件中使用任何行首注释**（`#` 在 column 0）
 - **禁止在 `content: |-` 后紧跟非缩进行**（包括空行后的无缩进内容）
-- **禁止手动编辑 `预设/<日期>/穗乃香.yml`**（它是生成物，改源文件后重跑集成即可）
+- **禁止手动编辑 `bin/exports/presets/<日期>/穗乃香.yml`**（它是生成物，改源文件后重跑集成即可）
 
 ### 修改后必须校验
 
 ```bash
-node scripts/validate_preset.js    # 0 errors 才算通过，有 warning 也要检查
+node src/validate_preset.js    # 0 errors 才算通过，有 warning 也要检查
 ```
 
 校验脚本检查项：
@@ -131,7 +131,7 @@ node scripts/validate_preset.js    # 0 errors 才算通过，有 warning 也要�
 
 ## 世界书条目编写守则（防止上下文成本失控）
 
-`world_lores` 的行为要点（依据 `附属文件/预设文档.md`）：`constant: true` 条目**每条消息必然全量注入**；`tokenLimit` 只约束关键词扫描；关键词按子串匹配。因此：
+`world_lores` 的行为要点（依据 `bin/requirements/预设文档.md`）：`constant: true` 条目**每条消息必然全量注入**；`tokenLimit` 只约束关键词扫描；关键词按子串匹配。因此：
 
 - **常驻（constant）条目保持最小集**：目前 **0 个**（2026-07-27 已全量移除）。如需恢复，仅保留最核心的概念定义（目标 ≤4K 字符），其余一律关键词触发。
 - **`recursiveScan` 保持 `false`**。
@@ -139,7 +139,24 @@ node scripts/validate_preset.js    # 0 errors 才算通过，有 warning 也要�
 - **禁止高频日常词作关键词**：`未来`、`日向`、`小雪`、`blue`、`一花`、`向阳`、`真夏`、`珊瑚`、`心音`、`永久` 等已在 2026-07-27 批量替换为全名形式。新增条目时检查关键词是否会在日常对话中误触发。
 - **城市/学校/队伍名不得分散在多个角色条目中**：已将所有城市名从角色条目剥离，改为独立的城市摘要条目（一个城市一个条目）。新增角色条目时，只保留角色名、变身称号等角色专属关键词，**不要加城市名**。城市摘要条目已覆盖 25 个地点。
 
-排查工具：`node scripts/audit_world_book.js` 输出常驻大小、单字关键词、递归风险等指标，改动世界书后可跑一遍。
+排查工具：`node src/audit_world_book.js` 输出常驻大小、单字关键词、递归风险等指标，改动世界书后可跑一遍。
+
+## 世界书注入的视角（避免模型把知识当成「用户刚发来的资料」）
+
+ChatLuna 命中条目后，把同一次注入的条目用 `\n` 拼接，按预设顶层的 `config.loreBooksPrompt` 模板渲染，**作为一条 human 消息**插进上下文。默认模板就是 `{input}`，也就是裸文本——模型看到的是「用户突然发来一大段设定百科」，于是容易表现出「刚知道」「你在告诉我」「这条情报我记下了」这类反应，而不是像角色本来就懂。
+
+世界书内容本身是客观描述（`Character_id`、`基本属性`……），这层措辞无法避免，所以要在**注入包装**和**系统规则**两处补上视角：
+
+- 顶层 `config.loreBooksPrompt` 给注入内容套【记忆片段】前缀，声明它是「你自己早已掌握的知识」，并要求不复述、不提「设定」「资料」「世界书」；
+- `### 角色扮演强制规则` 里有一条对应规则做双重保险。
+
+改动时的三条约束：
+
+- 模板里**只能出现一个变量 `{input}`**，其他 `{` / `}` 会被 LangChain 当成模板变量而报错；
+- 不能用行首 `#` 注释（校验判致命，详见上一节）；
+- 模板最终是一条 human 消息，写成「这段内容是什么性质」的说明即可；写成「你必须……」会污染当前轮次的指令强度。
+
+验证：`NODE_PATH=<chatluna 实例的 node_modules> node bin/data/verify-injection.cjs <MM.DD>`，会打印 YAML 解析结果、条目数、模板变量数与渲染出的消息类型（应为 `HumanMessage`）。该脚本是中间产物，用完可删。
 
 ## 角色例子处理规则
 
@@ -153,16 +170,16 @@ node scripts/validate_preset.js    # 0 errors 才算通过，有 warning 也要�
    - 行为规则 → `### 重要行为规则`
 3. **不保留原始叙述**：不要直接复制用户的场景描述，而是提取为通用的角色设定条目
 4. **同步到世界书**：如果例子涉及背景知识（人物关系、世界观等），同步更新 `穗乃香_世界书.yml`
-5. **重跑集成**：修改源文件后运行 `node scripts/integrate_preset.js` 重新生成最终预设（自动归档到当天日期文件夹，也可指定日期如 `node scripts/integrate_preset.js 07.18`）
+5. **重跑集成**：修改源文件后运行 `node src/integrate_preset.js` 重新生成最终预设（自动归档到当天日期文件夹，也可指定日期如 `node src/integrate_preset.js 07.18`）
 6. **世界书条目修改**：直接编辑 `光之美少女世界书Koishi版.yml`（**不要动酒馆版 JSON**），改后重跑集成
 
 ## 文件说明
 
 ```
-chat/
+ko_01/
 ├── CLAUDE.md                                ← 本指南
-├── .gitignore                               ← 排除 预设/ 和 *.bak
-├── scripts/
+├── .gitignore                               ← 排除 bin/exports/、bin/data/ 内容、dev/、*.bak
+├── src/                                     ← 脚本（源码）
 │   ├── integrate_preset.js                  ← 拼接预设 + 世界书 → 最终输出（自动按日期归档）
 │   ├── validate_preset.js                   ← **预设格式校验（改世界书后必须跑！）**
 │   ├── audit_world_book.js                  ← 世界书体检：常驻大小/单字关键词/递归风险/连环触发
@@ -170,7 +187,7 @@ chat/
 │   ├── convert_world_book.js                ← 一次性提取工具（重跑会覆盖 Koishi 版手动修改，需 --force）
 │   ├── extract_disabled_entries.js          ← 一次性：禁用条目提取（已执行，有防重跑保护）
 │   └── fix_context_cost.js                  ← 一次性：上下文成本治理（已执行）
-├── 附属文件/                                 ← 源文件与参考资料（手动维护）
+├── bin/requirements/                        ← 源文件与参考资料（手动维护）
 │   ├── 预设文档.md                           ← **ChatLuna 预设格式参考文档（编写/调试必读）**
 │   ├── 穗乃香_预设/
 │   │   └── 穗乃香_预设.yml                   ← 预设源文件（性格、对话、规则）
@@ -178,15 +195,18 @@ chat/
 │       ├── 穗乃香_世界书.yml                  ← 穗乃香专属世界书（背景知识，排在第一位）
 │       ├── 光之美少女世界书Koishi版.yml        ← 其他角色世界书 — 手动维护，所有修改在此进行
 │       └── 光之美少女世界书酒馆版.json         ← 酒馆格式原文件 — **只读**，仅供初次提取，勿修改
-└── 预设/                                     ← 最终输出（按日期归档，gitignore 排除）
-    └── 07.27/                               ← 当前版本
-        ├── 穗乃香.yml
-        └── backup/
+├── bin/exports/presets/                     ← 生成物（按日期归档，gitignore 排除）
+│   └── 10.20/                               ← 当前版本
+│       ├── 穗乃香.yml
+│       └── backup/
+├── bin/data/                                ← 中间产物（脚本处理中的临时文件）；当前为空，内容不入库，仅 .gitkeep 占位
+└── dev/                                     ← 开发专属（gitignored）
+    └── Old/                                 ← 入 git 之前的历史快照
 ```
 
 ## 预设文件格式（ChatLuna）
 
-顶层键为 `keywords`、`prompts`（system 角色，内容是 YAML block scalar 中的 Markdown）、`world_lores`（集成后才有）、`format_user_prompt`。格式细节参考 `附属文件/预设文档.md`。
+顶层键为 `keywords`、`prompts`（system 角色，内容是 YAML block scalar 中的 Markdown）、`world_lores`（集成后才有）、`format_user_prompt`，以及可选的 `config`（注入渲染模板等，见上一节）。格式细节参考 `bin/requirements/预设文档.md`。
 
 ### 版块结构（穗乃香_预设.yml 的 system prompt 内）
 

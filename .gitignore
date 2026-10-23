@@ -1,3 +1,12 @@
-预设/
+# 生成物：可重建（node src/integrate_preset.js），每版 800+ KB，不入库
+bin/exports/
+
+# 中间产物：脚本处理中的临时文件，不入库；只保留目录占位
+bin/data/*
+!bin/data/.gitkeep
+
+# 开发专属：历史快照、临时材料
+dev/
+
 *.bak
 *.manual_bak
