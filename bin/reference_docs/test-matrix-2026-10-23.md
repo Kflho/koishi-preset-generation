@@ -101,6 +101,7 @@ node src/audit_world_book.js
 | 53 | 其他角色声优的角色 | 问「小清水亜美配过哪些角色」只提 1–2 个（紅月カレン），不背清单 | ✅ | r30 live：`dev/dialogues/logs/2026-10-26-r30.jsonl` #r30-shimizu-roles |
 | 54 | 其他角色声优的其他角色·月岛雯 | 问「月岛雯 / 侧耳倾听」命中素材卡；能连到本名陽子（渚的声音）；不编剧情 | ✅ | r31 live（flash）：`dev/dialogues/logs/2026-10-26-r31.jsonl` #r31-shizuku |
 | 55 | 声优角色表 | 任意角色名（C.C./李莓铃/小清水/名塚…）命中同一张角色表；未单开的角色只走表 | ✅ | r32 live（flash）：小清水/本名阳子通过；C.C. 命中角色表 |
+| 56 | 其他角色声优的其他角色·乌塔 | 问乌塔/海贼王命中单独条目；回答「给京子同学配音的人」（名塚佳織）；不展开电影剧情 | ✅ | r36 live（flash）：`dev/dialogues/logs/2026-10-26-r36.jsonl` #r36-uta「是给京子同学配音的那个人」 |
 
 > r19 线上日志：`dev/dialogues/logs/2026-10-26-r19-special.jsonl`、`-r19-single.jsonl`。
 > r20 线上日志：`dev/dialogues/logs/2026-10-26-r20.jsonl`。
@@ -127,4 +128,7 @@ node src/audit_world_book.js
 > `特殊互动素材_声优角色表` 一张表覆盖所有特殊互动声优的全部角色（关键词=角色名+声优名+作品名），
 > 重要角色（七咲逢×絢辻詞、月島雫）单开；其余角色只进表，不再按名字开条目。
 > 声优名在「本人卡/角色表」重复属有意（validate 报信息级重复）。
+> r36（2026-10-26）：QQ 实测「乌塔」答错——角色表漏了 名塚佳織→ウタ（ONE PIECE FILM RED）；
+> 补进角色表 + 单独条目（重要角色），角色表另补 エウレカ/赫萝/纏流子/水銀燈/ラクス；
+> 探针 30/30；线上「是给京子同学配音的人」通过。
 > 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r23.md`）。
