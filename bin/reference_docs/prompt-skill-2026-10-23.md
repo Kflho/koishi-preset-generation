@@ -419,8 +419,9 @@ node src/audit_world_book.js
    线上 Windows 没有独立 `node` 时，用 `C:\Program Files\Koishi\Desktop\bin\koishi.exe <脚本>`
    （实测 v20.12.2，可跑 `dialog_client.cjs`）；
    **测试模型固定用 `deepseek/deepseek-flash`**（与 QQ 线上房间一致；v4-pro 贵，只在用户明确
-   要求时用）。沙箱新房间默认继承实例 `defaultModel`（v4-pro），开跑前先发
-   `/chatluna.room.set -m deepseek/deepseek-flash`、回 `Y` 确认，再发正式用例；
+   要求时用）。实例 `defaultModel` 已于 2026-10-26 改为 flash，沙箱新房间默认就是 flash；
+   只有更早创建的 pro 房间需要先发 `/chatluna.room.set -m deepseek/deepseek-flash`、回 `Y`
+   确认，再发正式用例；
 4. 命中：`python dev/dialogues/lores_match.py --preset <新产物> --log <日志> --out <plan.json>`；
 5. 记录：`dev/dialogues/<日期>-rN.md`，写「现象 → 改动 → 复测 → 结论」；
 6. 测什么：忠实性（人设表现 / 已知知识 / 其他角色互动）+ 趣味性（特殊互动：自己 VA /

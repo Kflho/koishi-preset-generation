@@ -187,9 +187,9 @@ ChatLuna 命中条目后，把同一次注入的条目用 `\n` 拼接，按预�
 5. **跑预设调试**：新增内容后按 `prompt-skill-2026-10-23.md`「预设调试」跑对话测试
    （管理 `koishi.py` + 项目 `dialog_client.cjs`），记录到 `dev/dialogues/`。
    **测试模型固定用 `deepseek/deepseek-flash`**（与 QQ 线上房间一致；`deepseek-v4-pro`
-   贵，只有用户明确要求时才用）。沙箱新房间默认继承实例 `defaultModel`（当前为 v4-pro），
-   所以用例开跑前先在房间里发 `/chatluna.room.set -m deepseek/deepseek-flash`、回 `Y`
-   确认，再问正式问题。
+   贵，只有用户明确要求时才用）。实例 `defaultModel` 已于 2026-10-26 改为 flash，沙箱
+   新房间默认就是 flash；只有更早创建的 pro 房间需要先发
+   `/chatluna.room.set -m deepseek/deepseek-flash`、回 `Y` 确认。
 6. **重跑集成**：修改源文件后运行 `node src/integrate_preset.js` 重新生成最终预设（自动归档到当天日期文件夹，也可指定日期如 `node src/integrate_preset.js 07.18`）
 7. **世界书条目修改**：直接编辑 `光之美少女世界书Koishi版.yml`（**不要动酒馆版 JSON**），改后重跑集成
 

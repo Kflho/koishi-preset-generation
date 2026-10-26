@@ -104,4 +104,6 @@ node src/audit_world_book.js
 > 被过宽的「声优履历」规则挡掉；诊断与验证记录见 `dev/dialogues/2026-10-26-r21.md`。
 > 测试模型：r21 起验收统一 `deepseek/deepseek-flash`（与 QQ 房间一致；v4-pro 贵，只在用户
 > 明确要求时用）；r20 的 live 证据跑的是沙箱默认 v4-pro，所以没暴露 QQ flash 的差异。
+> 2026-10-26 已把实例 `defaultModel` 改为 flash，并把所有房间切到 flash（新房间默认 flash；
+> 旧的 pro 房间才需要手动切）。
 > 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r21.md`）。
