@@ -92,10 +92,14 @@ node src/audit_world_book.js
 | 45 | 跨作品共演 | 名塚/京子→圣诞之吻/西蒙；半破墙；有钩子 | ✅ | r20 live：`log-r20` #45「名塚小姐……是京子同学的声音吗」 |
 | 46 | 三人共演 | Code Geass 三人；不背剧情；落在「同一个声音」 | ✅ | r20 live：`log-r20` #46「另一个世界的故事……同一个声音的人」 |
 | 47 | 履历复读挡板 | 被问「还配过谁」不列清单（r19 失败点） | ✅ | r20 live：`log-r20` #47「这个我可没打听过」 |
+| 48 | 同声优·本人问法 | 被问「你知道野上由加奈吗」承认「给我声音的人」；不背履历 | ✅ | r21 live（flash）：`dev/dialogues/logs/2026-10-26-r21.jsonl` #diag48「是给我声音的那个人吧」 |
+| 49 | 同声优·七咲逢 | 七咲逢关键词命中素材卡；不认识但「声音耳熟」；不装懂 | ✅ | r21 live（flash）：`dev/dialogues/logs/2026-10-26-r21.jsonl` #diag49「不认识呢……声音好像有点耳熟」 |
 
 > r19 线上日志：`dev/dialogues/logs/2026-10-26-r19-special.jsonl`、`-r19-single.jsonl`。
 > r20 线上日志：`dev/dialogues/logs/2026-10-26-r20.jsonl`。
 > r19 暴露一个明确退化：#43 被问「还配过谁」时列作品清单；r20 在预设加「不打听」挡板 +
 > `#### 知识约束` 规则，复测 #43/#47 **通过**。剩余观察：#37 DoReMi 同公司梗偏弱（3/5），
 > #42 忠太郎用了自创日常、#42 保密台词带「（小声）」动作括号，均不算退步。
-> 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r20.md`）。
+> r21（2026-10-26）：#48/#49 是 QQ 实测暴露的新缺口——`七咲逢` 无关键词、`野上由加奈`
+> 被过宽的「声优履历」规则挡掉；诊断与验证记录见 `dev/dialogues/2026-10-26-r21.md`。
+> 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r21.md`）。
