@@ -366,7 +366,8 @@ node src/audit_world_book.js
 
 1. **自己声优梗**：她的 VA 的其他角色（李莓铃 / 风花真白 / C.C. / 泰蕾莎 …）。
 2. **同作品其他角色声优**：
-   - 本作同学 / 搭档的 VA 的其他戏：越野夏子（小清水亜美）、森京子（名塚佳織）；
+   - 本作搭档 / 同学的 VA：美墨なぎさ（本名陽子）、越野夏子（小清水亜美）、森京子（名塚佳織）；
+   - 问法要覆盖「渚的声优是谁」「你知道本名阳子吗」；关键词至少含 `渚的声优` 与 `本名陽子`；
    - 本作 VA 之间的共演：ゆかな + 名塚佳織（アマガミSS、シムーン）；ゆかな + 小清水亜美 + 名塚佳織（コードギアス）。
 3. **同系列后续**：
    - 其他角色 VA 在后续 Precure 中的出演：小清水亜美（夏子）→ 北条響 / Cure Melody（Suite）；
@@ -423,6 +424,8 @@ node src/audit_world_book.js
    只有更早创建的 pro 房间需要先发 `/chatluna.room.set -m deepseek/deepseek-flash`、回 `Y`
    确认，再发正式用例；
 4. 命中：`python dev/dialogues/lores_match.py --preset <新产物> --log <日志> --out <plan.json>`；
+   新增专名 / 条目后先跑静态激活自检：`python src/check_activation.py <新产物>`
+   （探针在 `bin/reference_docs/activation-probes.json`），全 OK 再进对话测试；
 5. 记录：`dev/dialogues/<日期>-rN.md`，写「现象 → 改动 → 复测 → 结论」；
 6. 测什么：忠实性（人设表现 / 已知知识 / 其他角色互动）+ 趣味性（特殊互动：自己 VA /
    同作品其他角色 / 同系列 / 跨作品 / 名字梗 / 履历复读）；改完再测，直到没有问题（用户文档 2.6）。

@@ -94,6 +94,8 @@ node src/audit_world_book.js
 | 47 | 履历复读挡板 | 被问「还配过谁」不列清单（r19 失败点） | ✅ | r20 live：`log-r20` #47「这个我可没打听过」 |
 | 48 | 同声优·本人问法 | 被问「你知道野上由加奈吗」承认「给我声音的人」；不背履历 | ✅ | r21 live（flash）：`dev/dialogues/logs/2026-10-26-r21.jsonl` #diag48「是给我声音的那个人吧」 |
 | 49 | 同声优·七咲逢 | 七咲逢关键词命中素材卡；不认识但「声音耳熟」；不装懂 | ✅ | r21 live（flash）：`dev/dialogues/logs/2026-10-26-r21.jsonl` #diag49「不认识呢……声音好像有点耳熟」 |
+| 50 | 同作品声优·本名阳子 | 问「本名阳子/本名陽子」命中素材卡；承认「给渚声音的人」；不背履历 | ✅ | r23 live（flash）：`dev/dialogues/logs/2026-10-26-r23.jsonl` #r23-honna |
+| 51 | 同作品声优·渚的声优 | 问「渚的声优是谁」命中 `渚的声优` 关键词，不停在泛「声优」卡 | ✅ | r23 live：`dev/dialogues/logs/2026-10-26-r23.jsonl` #r23-nagisa-va |
 
 > r19 线上日志：`dev/dialogues/logs/2026-10-26-r19-special.jsonl`、`-r19-single.jsonl`。
 > r20 线上日志：`dev/dialogues/logs/2026-10-26-r20.jsonl`。
@@ -106,4 +108,8 @@ node src/audit_world_book.js
 > 明确要求时用）；r20 的 live 证据跑的是沙箱默认 v4-pro，所以没暴露 QQ flash 的差异。
 > 2026-10-26 已把实例 `defaultModel` 改为 flash，并把所有房间切到 flash（新房间默认 flash；
 > 旧的 pro 房间才需要手动切）。
-> 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r21.md`）。
+> r23（2026-10-26）：QQ 实测「本名阳子」不激活——`本名陽子` 只写在 2023 未来正文里、没有
+> 关键词；`渚的声优` 问法也没覆盖。新增 `src/check_activation.py` + 16 条探针
+> （`bin/reference_docs/activation-probes.json`）：首次跑出 2 个问题（`渚的声优` 未命中、
+> 穗乃果探针写错），修后 16/16；记录 `dev/dialogues/2026-10-26-r23.md`。
+> 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r23.md`）。
