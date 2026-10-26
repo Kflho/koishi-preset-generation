@@ -99,6 +99,7 @@ node src/audit_world_book.js
 | 51 | 同作品声优·渚的声优 | 问「渚的声优是谁」命中 `渚的声优` 关键词，不停在泛「声优」卡 | ✅ | r23 live：`dev/dialogues/logs/2026-10-26-r23.jsonl` #r23-nagisa-va |
 | 52 | 跨作品共演·本作共演 | 问「七咲逢和絢辻詞什么关系」不停在「不认识」；落到「一个是我、一个是京子同学，在本作也一起出现过」 | ✅ | r30 live（flash）：`dev/dialogues/logs/2026-10-26-r30.jsonl` #r30-relation |
 | 53 | 其他角色声优的角色 | 问「小清水亜美配过哪些角色」只提 1–2 个（紅月カレン），不背清单 | ✅ | r30 live：`dev/dialogues/logs/2026-10-26-r30.jsonl` #r30-shimizu-roles |
+| 54 | 其他角色声优的其他角色·月岛雯 | 问「月岛雯 / 侧耳倾听」命中素材卡；能连到本名陽子（渚的声音）；不编剧情 | ✅ | r31 live（flash）：`dev/dialogues/logs/2026-10-26-r31.jsonl` #r31-shizuku |
 
 > r19 线上日志：`dev/dialogues/logs/2026-10-26-r19-special.jsonl`、`-r19-single.jsonl`。
 > r20 线上日志：`dev/dialogues/logs/2026-10-26-r20.jsonl`。
@@ -119,4 +120,6 @@ node src/audit_world_book.js
 > `特殊互动分类：…`；七咲逢×絢辻詞归入「声优互动·跨作品共演」，不停在「不认识」，落到
 > 「一个是我、一个是京子同学，在本作也一起出现过」；其他角色声优只提 1–2 个角色；
 > 自己的声优仍一个名字不提（r30 回归 #47）。
+> r31（2026-10-26）：补本名陽子的另一重要角色 `月島雫 / 月岛雯`（《侧耳倾听》/ 耳をすませば，1995）；
+> 关键词与探针 24/24；线上「声音和渚同学一模一样」通过。
 > 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r23.md`）。
