@@ -413,10 +413,14 @@ node src/audit_world_book.js
 用户文档 2.6：给预设 / 世界书新增内容后，一定要调试。
 
 1. 管理：`python <kf-personal-service>/scripts/apps/koishi.py status` → `restart --yes`；
-2. 部署：把新产物推到 `data/chathub/presets/穗乃香.yml`，重启；
+2. 部署：把新产物推到 `data/chathub/presets/穗乃香.yml`。ChatLuna 的 preset service 对预设目录
+   有 `fs.watch` + md5 热重载，**只改预设文件不需要重启**；改了适配器/核心插件才重启；
 3. 对话：`node dev/dialogues/dialog_client.cjs --inst <实例> --cases <cases-special.json> --out <log.jsonl>`；
    线上 Windows 没有独立 `node` 时，用 `C:\Program Files\Koishi\Desktop\bin\koishi.exe <脚本>`
    （实测 v20.12.2，可跑 `dialog_client.cjs`）；
+   **测试模型固定用 `deepseek/deepseek-flash`**（与 QQ 线上房间一致；v4-pro 贵，只在用户明确
+   要求时用）。沙箱新房间默认继承实例 `defaultModel`（v4-pro），开跑前先发
+   `/chatluna.room.set -m deepseek/deepseek-flash`、回 `Y` 确认，再发正式用例；
 4. 命中：`python dev/dialogues/lores_match.py --preset <新产物> --log <日志> --out <plan.json>`；
 5. 记录：`dev/dialogues/<日期>-rN.md`，写「现象 → 改动 → 复测 → 结论」；
 6. 测什么：忠实性（人设表现 / 已知知识 / 其他角色互动）+ 趣味性（特殊互动：自己 VA /

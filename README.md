@@ -12,6 +12,9 @@ node src/validate_preset.js <日期或产物路径>   # 0 errors 才算通过
 node src/audit_world_book.js            # 世界书体检：常驻大小/单字关键词/递归风险
 ```
 
+对话测试统一用 `deepseek/deepseek-flash`（与 QQ 线上房间一致；v4-pro 贵，只在明确要求时用）：
+沙箱新房间先发 `/chatluna.room.set -m deepseek/deepseek-flash` → `Y`，再发正式用例。
+
 ## 目录
 
 ```text

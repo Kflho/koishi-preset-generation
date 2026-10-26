@@ -102,4 +102,6 @@ node src/audit_world_book.js
 > #42 忠太郎用了自创日常、#42 保密台词带「（小声）」动作括号，均不算退步。
 > r21（2026-10-26）：#48/#49 是 QQ 实测暴露的新缺口——`七咲逢` 无关键词、`野上由加奈`
 > 被过宽的「声优履历」规则挡掉；诊断与验证记录见 `dev/dialogues/2026-10-26-r21.md`。
+> 测试模型：r21 起验收统一 `deepseek/deepseek-flash`（与 QQ 房间一致；v4-pro 贵，只在用户
+> 明确要求时用）；r20 的 live 证据跑的是沙箱默认 v4-pro，所以没暴露 QQ flash 的差异。
 > 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r21.md`）。
