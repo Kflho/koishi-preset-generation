@@ -69,7 +69,8 @@ node src/audit_world_book.js
 ## 对话例子：角色互动 + 特殊互动（2026-10-26）
 
 落点：预设 `#### 角色互动对话示例`（8 条）与 `#### 特殊互动对话示例`（16 条）；
-素材：`穗乃香_世界书.yml` 的 `特殊互动素材` 与 `特殊互动素材_声优交集` 两个事实卡（各 ≤600 字符）。
+素材：`穗乃香_世界书.yml` 的 `特殊互动素材` / `特殊互动素材_同作品声优` / `特殊互动素材_跨作品共演`
+三张事实卡（各 ≤600 字符，卡开头标 `特殊互动分类`）。
 素材卡：`bin/reference_docs/research-special-interaction-2026-10-26.md`。
 例子银行：`bin/reference_docs/dialogue-examples-special-2026-10-26.md`。
 判分：趣味性 / 互动性 1–5 分（≥4 合格）；出现自曝虚构、履历朗读、元信息词即退步。
@@ -96,6 +97,8 @@ node src/audit_world_book.js
 | 49 | 同声优·七咲逢 | 七咲逢关键词命中素材卡；不认识但「声音耳熟」；不装懂 | ✅ | r21 live（flash）：`dev/dialogues/logs/2026-10-26-r21.jsonl` #diag49「不认识呢……声音好像有点耳熟」 |
 | 50 | 同作品声优·本名阳子 | 问「本名阳子/本名陽子」命中素材卡；承认「给渚声音的人」；不背履历 | ✅ | r23 live（flash）：`dev/dialogues/logs/2026-10-26-r23.jsonl` #r23-honna |
 | 51 | 同作品声优·渚的声优 | 问「渚的声优是谁」命中 `渚的声优` 关键词，不停在泛「声优」卡 | ✅ | r23 live：`dev/dialogues/logs/2026-10-26-r23.jsonl` #r23-nagisa-va |
+| 52 | 跨作品共演·本作共演 | 问「七咲逢和絢辻詞什么关系」不停在「不认识」；落到「一个是我、一个是京子同学，在本作也一起出现过」 | ✅ | r30 live（flash）：`dev/dialogues/logs/2026-10-26-r30.jsonl` #r30-relation |
+| 53 | 其他角色声优的角色 | 问「小清水亜美配过哪些角色」只提 1–2 个（紅月カレン），不背清单 | ✅ | r30 live：`dev/dialogues/logs/2026-10-26-r30.jsonl` #r30-shimizu-roles |
 
 > r19 线上日志：`dev/dialogues/logs/2026-10-26-r19-special.jsonl`、`-r19-single.jsonl`。
 > r20 线上日志：`dev/dialogues/logs/2026-10-26-r20.jsonl`。
@@ -112,4 +115,8 @@ node src/audit_world_book.js
 > 关键词；`渚的声优` 问法也没覆盖。新增 `src/check_activation.py` + 16 条探针
 > （`bin/reference_docs/activation-probes.json`）：首次跑出 2 个问题（`渚的声优` 未命中、
 > 穗乃果探针写错），修后 16/16；记录 `dev/dialogues/2026-10-26-r23.md`。
+> r29/r30（2026-10-26）：特殊互动改为「按类写回答思路 + 具体例子」，世界书条目开头标
+> `特殊互动分类：…`；七咲逢×絢辻詞归入「声优互动·跨作品共演」，不停在「不认识」，落到
+> 「一个是我、一个是京子同学，在本作也一起出现过」；其他角色声优只提 1–2 个角色；
+> 自己的声优仍一个名字不提（r30 回归 #47）。
 > 用例文件：`dev/dialogues/cases-special.json`（gitignored，跑完记录到 `dev/dialogues/2026-10-26-r23.md`）。
